@@ -38,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
 
     private final String YOU_PASS = "Door unlocked!";
 
-    private final String DEFAULT_MESSAGE = "Wanna drink?";
+    private final String DEFAULT_MESSAGE = "Are you going to be drinking?";
 
     private final String CONTACT_OTHERS = "You need to contact friends or family";
 
-    private final String TEST_INSTRUCTION = "You need to click button 10 times to unlock";
+    private final String TEST_INSTRUCTION = "You need to click button 3 times to unlock";
 
     public static final String EXTRA_MESSAGE =
             "com.example.android.hellosharedprefs.extra.MESSAGE";
