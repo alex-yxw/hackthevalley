@@ -62,9 +62,9 @@ public class TestingActivity extends AppCompatActivity {
         clickMe.setVisibility(View.GONE);
     }
 
-    private final int PASS_COUNT = 3;
+    private final int PASS_COUNT = 8;
 
-    private final int TOTAL_COUNT = 4;
+    private final int TOTAL_COUNT = 11;
 
     private final int MAX_RETRY = 3;
 

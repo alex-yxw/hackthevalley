@@ -43,6 +43,6 @@ limitations under the License. -->
     <string name="notification_text">You need to pass the test to unlock the door.</string>
     <string name="text_header">Instruction</string>
 
-    <string name="button_testing">Click me!</string>
+    <string name="button_testing">=^● ⋏ ● ^=</string>
     <string name="button_start">Click me to start!</string>
 </resources>

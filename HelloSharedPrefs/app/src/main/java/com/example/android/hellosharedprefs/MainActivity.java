@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     private final String CONTACT_OTHERS = "You need to contact friends or family";
 
-    private final String TEST_INSTRUCTION = "You need to click button 3 times to unlock";
+    private final String TEST_INSTRUCTION = "You need to click pusheens 8 times to unlock";
 
     public static final String EXTRA_MESSAGE =
             "com.example.android.hellosharedprefs.extra.MESSAGE";
