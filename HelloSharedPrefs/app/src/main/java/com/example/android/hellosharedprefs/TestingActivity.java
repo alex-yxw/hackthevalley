@@ -1,6 +1,7 @@
 package com.example.android.hellosharedprefs;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -21,7 +22,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.Random;
@@ -44,8 +44,12 @@ public class TestingActivity extends AppCompatActivity {
 
     private final String TEXT_MESSAGE = "Pick me up, since I am drunk.";
 
+    public static Activity fa;
+    public static boolean isThreadEnd = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        fa = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing);
         Intent intent = getIntent();
@@ -63,7 +67,7 @@ public class TestingActivity extends AppCompatActivity {
         clickMe.setVisibility(View.GONE);
     }
 
-    private final int PASS_COUNT = 8;
+    private final int PASS_COUNT = 1;
 
     private final int TOTAL_COUNT = 11;
 
@@ -90,10 +94,16 @@ public class TestingActivity extends AppCompatActivity {
                 if (current_score >= PASS_COUNT) {
                     current_score = 0;
                     try_count = 0;
+
+                    Intent intent = new Intent(this, ColorActivity.class);
+                    isThreadEnd = true;
+                    startActivity(intent);
+
                     Intent replyIntent = new Intent();
                     replyIntent.putExtra(EXTRA_REPLY, YOU_PASS);
                     setResult(RESULT_OK, replyIntent);
                     finish();
+
                 } else if (retry_count > MAX_RETRY) {
                     textView.setText(CONTACT_OTHERS + NO_RETRY);
                     clickMe.setText("No more retry");
@@ -142,11 +152,11 @@ public class TestingActivity extends AppCompatActivity {
             timer.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    setButtonRandomPosition(b);
+                    if(!isThreadEnd)setButtonRandomPosition(b);
                     Log.d(LOG_TAG, Integer.toString(try_count));
                     try_count++;
                 }
-            }, 0, 1000);//Update button every second
+            }, 1, 1000);//Update button every second
 
             new CountDownTimer(TOTAL_COUNT * 1000, 1000) {
                 TextView text = findViewById(R.id.text_message);
