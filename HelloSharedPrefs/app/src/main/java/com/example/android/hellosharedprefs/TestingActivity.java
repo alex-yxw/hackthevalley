@@ -4,7 +4,9 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.graphics.Point;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -19,6 +21,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.Random;
 import java.util.Timer;
@@ -59,9 +63,9 @@ public class TestingActivity extends AppCompatActivity {
         clickMe.setVisibility(View.GONE);
     }
 
-    private final int PASS_COUNT = 3;
+    private final int PASS_COUNT = 8;
 
-    private final int TOTAL_COUNT = 4;
+    private final int TOTAL_COUNT = 11;
 
     private final int MAX_RETRY = 3;
 
@@ -73,9 +77,13 @@ public class TestingActivity extends AppCompatActivity {
     public static final String EXTRA_REPLY =
             "com.example.android.hellosharedprefs.extra.REPLY";
 
+
     public void clickCount(View view) {
         Button clickMe = findViewById(R.id.button_testing);
         TextView textView = findViewById(R.id.text_message);
+        Random rnd = new Random();
+        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+        clickMe.setBackgroundColor(color);
         if (!isRetrying) {
             if (canTry) {
                 current_score++;
@@ -90,11 +98,8 @@ public class TestingActivity extends AppCompatActivity {
                     textView.setText(CONTACT_OTHERS + NO_RETRY);
                     clickMe.setText("No more retry");
                     canTry = false;
-/*                    Intent sendIntent = new Intent();
-                    sendIntent.setAction(Intent.ACTION_SEND);
-                    sendIntent.putExtra(Intent.EXTRA_TEXT, TEXT_MESSAGE);
-                    sendIntent.setType("text/plain");
-                    startActivity(sendIntent);*/
+/*                    mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+                    sendMessage();*/
                     phoneCall();
                 } //TODO: BUG
             }
@@ -104,6 +109,14 @@ public class TestingActivity extends AppCompatActivity {
         }
     }
 
+    private void sendMessage() {
+        getLocation();
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, locationMessage);
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
+    }
     public static Point getDisplaySize(@NonNull Context context) {
         Point point = new Point();
         WindowManager manager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
@@ -116,7 +129,6 @@ public class TestingActivity extends AppCompatActivity {
         int y = getDisplaySize(this).y;
         int randomX = new Random().nextInt(x/2) + x/4;
         int randomY = new Random().nextInt(y/2) + y/4;
-
         button.setX(randomX);
         button.setY(randomY);
     }
@@ -164,7 +176,7 @@ public class TestingActivity extends AppCompatActivity {
         }
     }
 
-    //FusedLocationProviderClient mFusedLocationClient;
+    FusedLocationProviderClient mFusedLocationClient;
     public void StartTesting(View view) {
         if(canTry) {
             try_count = 0;
@@ -177,8 +189,9 @@ public class TestingActivity extends AppCompatActivity {
             retry_count++;
         } else {
 
-      //      mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-            //phoneCall();
+/*            mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+            sendMessage();*/
+            phoneCall();
         }
     }
 
@@ -188,6 +201,7 @@ public class TestingActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private String locationMessage = "";
     private void getLocation() {
         if (ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
@@ -196,7 +210,22 @@ public class TestingActivity extends AppCompatActivity {
                             {Manifest.permission.ACCESS_FINE_LOCATION},
                     REQUEST_LOCATION_PERMISSION);
         } else {
-            //Log.d(TAG, "getLocation: permissions granted");
+            mFusedLocationClient.getLastLocation().addOnSuccessListener(
+                    new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location location) {
+                            if (location != null) {
+                                Location mLastLocation = location;
+                                locationMessage =
+                                        getString(R.string.location_text,
+                                                mLastLocation.getLatitude(),
+                                                mLastLocation.getLongitude(),
+                                                mLastLocation.getTime());
+                            } else {
+                                locationMessage = "No location";
+                            }
+                        }
+                    });
         }
     }
 

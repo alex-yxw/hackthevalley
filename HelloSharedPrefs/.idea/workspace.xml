@@ -6,11 +6,15 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0af3cf2c-2547-4b0b-b3cf-b63fae6066b6" name="Default Changelist" comment="">
+    <list default="true" id="da5bd06b-8500-4125-b42d-d624e18c2481" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/TestingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/TestingActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/TestingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/TestingActivity.java" afterDir="false" />
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,44 +30,76 @@
     </system>
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="862176684">
+    <session id="1067082235">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
+<<<<<<< HEAD
           <entry key="project.open.time.0" value="2" />
+=======
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.40" value="1" />
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
           <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+<<<<<<< HEAD
           <entry key="java" value="2" />
           <entry key="xml" value="2" />
+=======
+          <entry key="class" value="7" />
+          <entry key="gradle" value="2" />
+          <entry key="java" value="4" />
+          <entry key="xml" value="5" />
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+<<<<<<< HEAD
           <entry key="JAVA" value="2" />
           <entry key="XML" value="2" />
+=======
+          <entry key="CLASS" value="7" />
+          <entry key="Groovy" value="2" />
+          <entry key="JAVA" value="4" />
+          <entry key="XML" value="5" />
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="java" value="110" />
           <entry key="txt" value="19" />
           <entry key="xml" value="4" />
+=======
+          <entry key="gradle" value="11" />
+          <entry key="java" value="235" />
+          <entry key="xml" value="3" />
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="JAVA" value="110" />
           <entry key="PLAIN_TEXT" value="19" />
           <entry key="XML" value="4" />
+=======
+          <entry key="Groovy" value="11" />
+          <entry key="JAVA" value="235" />
+          <entry key="XML" value="3" />
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -92,6 +128,107 @@
                 <element signature="e#1220#1243#0" expanded="true" />
                 <element signature="e#3012#3034#0" expanded="true" />
               </folding>
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/TestingActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="85" column="15" selection-start-line="85" selection-start-column="15" selection-end-line="85" selection-end-column="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Users/yuanxin/Sdk/platforms/android-27/android.jar!/android/app/Activity.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="832" column="16" selection-start-line="832" selection-start-column="16" selection-end-line="832" selection-end-column="16" />
+              <folding>
+                <element signature="e#24103#24104#0" expanded="true" />
+                <element signature="e#24154#24155#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/appcompat-v7/27.1.1/21d073509c5f8d25a1bf274067fa729a1fba8d75/appcompat-v7-27.1.1-sources.jar!/android/support/v7/app/AppCompatViewInflater.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="391" selection-start-line="391" selection-end-line="391" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Users/yuanxin/Sdk/platforms/android-27/android.jar!/android/view/View.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="2955" selection-start-line="2955" selection-end-line="2955" />
+              <folding>
+                <element signature="e#13104#13105#0" expanded="true" />
+                <element signature="e#13155#13156#0" expanded="true" />
+                <element signature="e#15647#15648#0" expanded="true" />
+                <element signature="e#15698#15699#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Users/yuanxin/Sdk/platforms/android-27/android.jar!/android/os/Handler.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="123">
+              <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+              <folding>
+                <element signature="e#700#701#0" expanded="true" />
+                <element signature="e#751#752#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Users/yuanxin/Sdk/platforms/android-27/android.jar!/android/os/Looper.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+              <folding>
+                <element signature="e#561#562#0" expanded="true" />
+                <element signature="e#612#613#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-compat/27.1.1/fe233277b6eae25ce5b2afab6daf55d73c86f0b9/support-compat-27.1.1-sources.jar!/android/support/v4/content/ContextCompat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="438" selection-start-line="438" selection-end-line="438" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="74" column="38" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
             </state>
           </provider>
         </entry>
@@ -99,8 +236,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="360">
               <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+=======
+            <state relative-caret-position="364">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
             </state>
           </provider>
         </entry>
@@ -109,9 +251,26 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+<<<<<<< HEAD
       <find>notify</find>
       <find>test</find>
       <find>reset</find>
+=======
+      <find>416</find>
+      <find>TAG</find>
+      <find>REQUEST_LOCATION_PERMISSION</find>
+      <find>getLocation</find>
+      <find>PHONE</find>
+      <find>SENDM</find>
+      <find>getLastLocation</find>
+      <find>SEND</find>
+      <find>mFusedLocationClient</find>
+      <find>getLoca</find>
+      <find>phone</find>
+      <find>testing</find>
+      <find>launching</find>
+      <find>launchTesting</find>
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -120,17 +279,27 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/TestingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+=======
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/TestingActivity.java" />
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="804" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="645" />
+    <option name="y" value="185" />
+    <option name="width" value="1465" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -138,6 +307,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="PackagesPane" />
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -173,19 +346,30 @@
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
+<<<<<<< HEAD
+=======
+            <path>
+              <item name="HelloSharedPrefs" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="ProjectPane" />
+<<<<<<< HEAD
       <pane id="PackagesPane" />
+=======
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="device.picker.selection" value="Nexus_5X_API_24" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="android.sdk.path" value="C:/Users/yuanxin/Sdk" />
+    <property name="device.picker.selection" value="Nexus_5X_API_24_2" />
+    <property name="last_opened_file_path" value="D:/Downloads/android-advanced-master/WalkMyAndroidPlaces-Solution" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -206,7 +390,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+    <configuration name="MainActivity" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false" temporary="true">
       <module name="app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -215,7 +399,7 @@
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
+      <option name="MODE" value="specific_activity" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
@@ -254,23 +438,29 @@
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
+      <option name="ACTIVITY_CLASS" value="com.example.android.hellosharedprefs.MainActivity" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android App.MainActivity" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0af3cf2c-2547-4b0b-b3cf-b63fae6066b6" name="Default Changelist" comment="" />
-      <created>1550946607344</created>
+      <changelist id="da5bd06b-8500-4125-b42d-d624e18c2481" name="Default Changelist" comment="" />
+      <created>1550943411057</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1550946607344</updated>
+      <updated>1550943411057</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00001" summary="string changes only">
       <created>1550946896772</created>
       <option name="number" value="00001" />
@@ -310,21 +500,78 @@
       <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.3286517" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="right" id="Preview" />
+=======
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.3295302" />
+      <window_info id="Structure" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Logcat" order="0" />
+      <window_info anchor="bottom" id="TODO" order="1" />
+      <window_info anchor="bottom" id="Android Profiler" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32907802" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32907802" />
+      <window_info anchor="bottom" id="Find" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32907802" />
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
+<<<<<<< HEAD
+=======
+      <window_info anchor="right" id="Preview" order="5" />
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="string changes only" />
-    <option name="LAST_COMMIT_MESSAGE" value="string changes only" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/TestingActivity.java</url>
+          <line>205</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/TestingActivity.java</url>
+          <line>217</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/TestingActivity.java</url>
+          <line>216</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/TestingActivity.java</url>
+          <line>95</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
@@ -334,45 +581,150 @@
             <element signature="e#1220#1243#0" expanded="true" />
             <element signature="e#3012#3034#0" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="22" column="60" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Users/yuanxin/Sdk/platforms/android-27/android.jar!/android/content/Context.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="124" column="34" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="74" column="38" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-compat/27.1.1/fe233277b6eae25ce5b2afab6daf55d73c86f0b9/support-compat-27.1.1-sources.jar!/android/support/v4/content/ContextCompat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="438" selection-start-line="438" selection-end-line="438" />
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="360">
           <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+=======
+        <state relative-caret-position="364">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="134">
           <caret line="220" column="21" selection-start-line="220" selection-start-column="16" selection-end-line="220" selection-end-column="21" />
+=======
+        <state relative-caret-position="136">
+          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/play-services-location-11.4.2.aar/53da3de344ff10026e21dcd4d01ea8e2/jars/classes.jar!/com/google/android/gms/location/FusedLocationProviderClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="52" column="45" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/appcompat-v7/27.1.1/21d073509c5f8d25a1bf274067fa729a1fba8d75/appcompat-v7-27.1.1-sources.jar!/android/support/v7/app/AppCompatViewInflater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="391" selection-start-line="391" selection-end-line="391" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Users/yuanxin/Sdk/platforms/android-27/android.jar!/android/view/View.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="2955" selection-start-line="2955" selection-end-line="2955" />
+          <folding>
+            <element signature="e#13104#13105#0" expanded="true" />
+            <element signature="e#13155#13156#0" expanded="true" />
+            <element signature="e#15647#15648#0" expanded="true" />
+            <element signature="e#15698#15699#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Users/yuanxin/Sdk/platforms/android-27/android.jar!/android/os/Handler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+          <folding>
+            <element signature="e#700#701#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Users/yuanxin/Sdk/platforms/android-27/android.jar!/android/os/Looper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding>
+            <element signature="e#561#562#0" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Users/yuanxin/Sdk/platforms/android-27/android.jar!/android/app/Activity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="832" column="16" selection-start-line="832" selection-start-column="16" selection-end-line="832" selection-end-column="16" />
+          <folding>
+            <element signature="e#24103#24104#0" expanded="true" />
+            <element signature="e#24154#24155#0" expanded="true" />
+          </folding>
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/hellosharedprefs/TestingActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="133">
           <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="231" selection-end-column="7" />
+=======
+        <state relative-caret-position="190">
+          <caret line="85" column="15" selection-start-line="85" selection-start-column="15" selection-end-line="85" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> 0c820e0c383f763f162bf7a73cddac4e11f1bc22
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
