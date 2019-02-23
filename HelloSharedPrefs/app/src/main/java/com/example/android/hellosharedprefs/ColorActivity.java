@@ -52,6 +52,7 @@ public class ColorActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Button b = (Button) v;
                 if (b.getText().equals("stop")) {
+
                     timerHandler.removeCallbacks(timerRunnable);
                     b.setText("start");
                     if(millis < 400) {
@@ -61,15 +62,23 @@ public class ColorActivity extends AppCompatActivity {
                         finish();
                     }
                 } else {
-                    startTime = System.currentTimeMillis();
-                    timerHandler.postDelayed(timerRunnable, 0);
-                    b.setText("stop");
-                }
 
-                Random rnd = new Random();
-                Button colorButton = findViewById(R.id.button_color);
-                int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
-                colorButton.setBackgroundColor(color);
+
+                    b.setText("stop");
+                    try {
+                        Random rnd = new Random();
+                        Thread.sleep(rnd.nextInt(256) * 10);
+                        Button colorButton = findViewById(R.id.button_color);
+                        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+                        colorButton.setBackgroundColor(color);
+                        millis = 0;
+                        startTime = System.currentTimeMillis();
+                        timerTextView.setText(millis + "ms");
+                        timerHandler.postDelayed(timerRunnable, 0);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         });
     }
