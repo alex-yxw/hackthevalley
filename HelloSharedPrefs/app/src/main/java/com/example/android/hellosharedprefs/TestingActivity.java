@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.location.Location;
 import android.net.Uri;
@@ -76,9 +77,13 @@ public class TestingActivity extends AppCompatActivity {
     public static final String EXTRA_REPLY =
             "com.example.android.hellosharedprefs.extra.REPLY";
 
+
     public void clickCount(View view) {
         Button clickMe = findViewById(R.id.button_testing);
         TextView textView = findViewById(R.id.text_message);
+        Random rnd = new Random();
+        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+        clickMe.setBackgroundColor(color);
         if (!isRetrying) {
             if (canTry) {
                 current_score++;
@@ -124,7 +129,6 @@ public class TestingActivity extends AppCompatActivity {
         int y = getDisplaySize(this).y;
         int randomX = new Random().nextInt(x/2) + x/4;
         int randomY = new Random().nextInt(y/2) + y/4;
-
         button.setX(randomX);
         button.setY(randomY);
     }
