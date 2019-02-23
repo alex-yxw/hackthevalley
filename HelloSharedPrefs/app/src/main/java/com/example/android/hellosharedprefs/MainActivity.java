@@ -1,18 +1,3 @@
-/*
- * Copyright (C) 2016 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.example.android.hellosharedprefs;
 
 import android.app.NotificationChannel;
@@ -33,16 +18,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-/**
- * HelloSharedPrefs is an adaptation of the HelloToast app from chapter 1.
- * It includes:
- * - Buttons for changing the background color.
- * - Maintenance of instance state.
- * - Themes and styles.
- * - Read and write shared preferences for the current count and the color.
- * <p>
- * This is the solution code for HelloSharedPrefs.
- */
 public class MainActivity extends AppCompatActivity {
 
     // Constants for the notification actions buttons.
@@ -153,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
         willDrink = true;
         mShowCountTextView.setText(String.format("%s", DRINK));
         sendNotification();
+        lock();
     }
 
     private static final String LOG_TAG =
@@ -195,8 +171,19 @@ public class MainActivity extends AppCompatActivity {
                 String reply =
                         data.getStringExtra(TestingActivity.EXTRA_REPLY);
                 mShowCountTextView.setText(String.format("%s", reply));
+                unlock();
+                reset();
             }
         }
+    }
+
+    //TODO
+    private void unlock() {
+
+    }
+    //TODO
+    private void lock() {
+
     }
 
     /**
@@ -230,13 +217,10 @@ public class MainActivity extends AppCompatActivity {
      * Handles the onClick for the Reset button.  Resets the global willDrink and
      * the defaults and resets the views to those
      * default values.
-     *
-     * @param view The view (Button) that was clicked.
      */
-    public void reset(View view) {
+    public void reset() {
 
         willDrink = false;
-        mShowCountTextView.setText(String.format("%s", YOU_PASS));
 
         // Clear preferences
         SharedPreferences.Editor preferencesEditor = mPreferences.edit();

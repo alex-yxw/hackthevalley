@@ -1,18 +1,24 @@
 package com.example.android.hellosharedprefs;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Point;
+import android.net.Uri;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.location.FusedLocationProviderClient;
 
 import java.util.Random;
 import java.util.Timer;
@@ -70,25 +76,26 @@ public class TestingActivity extends AppCompatActivity {
     public void clickCount(View view) {
         Button clickMe = findViewById(R.id.button_testing);
         TextView textView = findViewById(R.id.text_message);
-        if(!isRetrying) {
+        if (!isRetrying) {
             if (canTry) {
                 current_score++;
-                if(current_score >= PASS_COUNT) {
+                if (current_score >= PASS_COUNT) {
                     current_score = 0;
                     try_count = 0;
                     Intent replyIntent = new Intent();
                     replyIntent.putExtra(EXTRA_REPLY, YOU_PASS);
                     setResult(RESULT_OK, replyIntent);
                     finish();
-                }else if(retry_count > MAX_RETRY) {
+                } else if (retry_count > MAX_RETRY) {
                     textView.setText(CONTACT_OTHERS + NO_RETRY);
                     clickMe.setText("No more retry");
                     canTry = false;
-                    Intent sendIntent = new Intent();
+/*                    Intent sendIntent = new Intent();
                     sendIntent.setAction(Intent.ACTION_SEND);
                     sendIntent.putExtra(Intent.EXTRA_TEXT, TEXT_MESSAGE);
                     sendIntent.setType("text/plain");
-                    startActivity(sendIntent);
+                    startActivity(sendIntent);*/
+                    phoneCall();
                 } //TODO: BUG
             }
         } else {
@@ -112,7 +119,6 @@ public class TestingActivity extends AppCompatActivity {
 
         button.setX(randomX);
         button.setY(randomY);
-
     }
 
     private static final String LOG_TAG =
@@ -158,6 +164,7 @@ public class TestingActivity extends AppCompatActivity {
         }
     }
 
+    //FusedLocationProviderClient mFusedLocationClient
     public void StartTesting(View view) {
         if(canTry) {
             try_count = 0;
@@ -169,11 +176,47 @@ public class TestingActivity extends AppCompatActivity {
             startRandomButton(clickMe);
             retry_count++;
         } else {
-            Intent sendIntent = new Intent();
-            sendIntent.setAction(Intent.ACTION_SEND);
-            sendIntent.putExtra(Intent.EXTRA_TEXT, TEXT_MESSAGE);
-            sendIntent.setType("text/plain");
-            startActivity(sendIntent);
+
+      //      mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+            //phoneCall();
+        }
+    }
+
+    private void phoneCall() {
+        String phone = "Your phone number";
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+        startActivity(intent);
+    }
+
+    private void getLocation() {
+        if (ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]
+                            {Manifest.permission.ACCESS_FINE_LOCATION},
+                    REQUEST_LOCATION_PERMISSION);
+        } else {
+            //Log.d(TAG, "getLocation: permissions granted");
+        }
+    }
+
+    private final int REQUEST_LOCATION_PERMISSION = 10;
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_LOCATION_PERMISSION:
+                // If the permission is granted, get the location,
+                // otherwise, show a Toast
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    getLocation();
+                } else {
+                    Toast.makeText(this,
+                            R.string.notification_text,
+                            Toast.LENGTH_SHORT).show();
+                }
+                break;
         }
     }
 }

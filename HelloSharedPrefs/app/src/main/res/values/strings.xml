@@ -12,6 +12,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License. -->
 <resources>
+
+    <string name="location_text">"Latitude: %1$.4f \n Longitude: %2$.4f\n Timestamp: %3$tr"</string>
+
     <!-- Title of app -->
     <string name="app_name">Planning to drink?</string>
 
