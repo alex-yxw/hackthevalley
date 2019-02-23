@@ -164,7 +164,7 @@ public class TestingActivity extends AppCompatActivity {
         }
     }
 
-    //FusedLocationProviderClient mFusedLocationClient
+    //FusedLocationProviderClient mFusedLocationClient;
     public void StartTesting(View view) {
         if(canTry) {
             try_count = 0;
