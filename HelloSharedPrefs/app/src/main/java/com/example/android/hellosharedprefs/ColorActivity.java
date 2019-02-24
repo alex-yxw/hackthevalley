@@ -2,6 +2,7 @@ package com.example.android.hellosharedprefs;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -55,11 +56,13 @@ public class ColorActivity extends AppCompatActivity {
 
                     timerHandler.removeCallbacks(timerRunnable);
                     b.setText("start");
-                    if(millis < 400) {
+                    if(millis < 500) {
                         Intent replyIntent = new Intent();
                         replyIntent.putExtra(EXTRA_REPLY, YOU_PASS);
                         setResult(RESULT_OK, replyIntent);
                         finish();
+                    } else {
+                        phoneCall();
                     }
                 } else {
 
@@ -67,7 +70,7 @@ public class ColorActivity extends AppCompatActivity {
                     b.setText("stop");
                     try {
                         Random rnd = new Random();
-                        Thread.sleep(rnd.nextInt(256) * 10);
+                        Thread.sleep((rnd.nextInt(200) + 200 )* 10);
                         Button colorButton = findViewById(R.id.button_color);
                         int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
                         colorButton.setBackgroundColor(color);
@@ -82,7 +85,11 @@ public class ColorActivity extends AppCompatActivity {
             }
         });
     }
-
+    private void phoneCall() {
+        String phone = "6472705503";
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+        startActivity(intent);
+    }
     @Override
     public void onPause() {
         super.onPause();

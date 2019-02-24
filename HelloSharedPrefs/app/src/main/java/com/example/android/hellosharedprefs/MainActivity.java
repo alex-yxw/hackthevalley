@@ -26,6 +26,10 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button yes;
+
+    Button test;
+
     // Constants for the notification actions buttons.
     private static final String ACTION_UPDATE_NOTIFICATION =
             "com.android.example.notifyme.ACTION_UPDATE_NOTIFICATION";
@@ -78,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialize views, color, preferences
         mShowCountTextView = findViewById(R.id.count_textview);
+
+        yes = findViewById(R.id.yes_button);
+        test = findViewById(R.id.reset_button);
 
         mPreferences = getSharedPreferences(sharedPrefFile, MODE_PRIVATE);
 
@@ -219,7 +226,8 @@ public class MainActivity extends AppCompatActivity {
 
     //TODO
     private void unlock() {
-
+        yes.setVisibility(View.GONE);
+        test.setVisibility(View.GONE);
     }
     //TODO
     private void lock() {

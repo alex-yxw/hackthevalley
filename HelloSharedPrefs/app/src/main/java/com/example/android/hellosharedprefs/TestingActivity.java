@@ -67,7 +67,7 @@ public class TestingActivity extends AppCompatActivity {
         clickMe.setVisibility(View.GONE);
     }
 
-    private final int PASS_COUNT = 1;
+    private final int PASS_COUNT = 8;
 
     private final int TOTAL_COUNT = 11;
 
@@ -83,7 +83,9 @@ public class TestingActivity extends AppCompatActivity {
 
 
     public void clickCount(View view) {
+
         Button clickMe = findViewById(R.id.button_testing);
+        Button start = findViewById(R.id.button_testing);
         TextView textView = findViewById(R.id.text_message);
         Random rnd = new Random();
         int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
@@ -98,7 +100,6 @@ public class TestingActivity extends AppCompatActivity {
                     Intent intent = new Intent(this, ColorActivity.class);
                     isThreadEnd = true;
                     startActivity(intent);
-
                     Intent replyIntent = new Intent();
                     replyIntent.putExtra(EXTRA_REPLY, YOU_PASS);
                     setResult(RESULT_OK, replyIntent);
@@ -206,7 +207,7 @@ public class TestingActivity extends AppCompatActivity {
     }
 
     private void phoneCall() {
-        String phone = "Your phone number";
+        String phone = "6472705503";
         Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
         startActivity(intent);
     }
