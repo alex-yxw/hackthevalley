@@ -34,7 +34,7 @@ public class TestingActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE =
             "com.example.android.hellosharedprefs.extra.MESSAGE";
 
-    private final String TEST_INSTRUCTION2 = "Test your reflexes, get ready!";
+
 
     public static final int TEXT_REQUEST = 1;
 
@@ -96,10 +96,7 @@ public class TestingActivity extends AppCompatActivity {
 
     public void clickCount(View view) {
 
-        Intent intent2 = new Intent(this, TestingActivity.class);
-        intent2.putExtra(EXTRA_MESSAGE, TEST_INSTRUCTION2);
-        startActivityForResult(intent2, TEXT_REQUEST);
-        intent2.putExtra(EXTRA_MESSAGE, TEST_INSTRUCTION2);
+
         Button clickMe = findViewById(R.id.button_testing);
         Button start = findViewById(R.id.button_testing);
         TextView textView = findViewById(R.id.text_message);
@@ -112,6 +109,7 @@ public class TestingActivity extends AppCompatActivity {
                 if (current_score >= PASS_COUNT) {
                     current_score = 0;
                     try_count = 0;
+
 
                     Intent intent = new Intent(this, ColorActivity.class);
                     isThreadEnd = true;
@@ -169,8 +167,16 @@ public class TestingActivity extends AppCompatActivity {
         int y = getDisplaySize(this).y;
         int randomX = new Random().nextInt(x/2) + x/4;
         int randomY = new Random().nextInt(y/2) + y/4;
-        button.setX(randomX);
-        button.setY(randomY);
+        if(!isThreadEnd) {
+            try {
+                button.setX(randomX);
+                button.setY(randomY);
+            } catch (Exception e) {
+                e.printStackTrace();
+                finish();
+            }
+
+        }
     }
 
     private static final String LOG_TAG =
@@ -182,7 +188,7 @@ public class TestingActivity extends AppCompatActivity {
             timer.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    if(!isThreadEnd)setButtonRandomPosition(b);
+                    setButtonRandomPosition(b);
                     Log.d(LOG_TAG, Integer.toString(try_count));
                     try_count++;
                 }

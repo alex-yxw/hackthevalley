@@ -20,6 +20,8 @@ import static com.example.android.hellosharedprefs.TestingActivity.EXTRA_REPLY;
 
 public class ColorActivity extends AppCompatActivity {
 
+    private final String TEST_INSTRUCTION2 = "Test your reflexes, get ready!";
+
     TextView timerTextView;
     long startTime = 0;
     long millis;
@@ -40,10 +42,11 @@ public class ColorActivity extends AppCompatActivity {
     private final String YOU_PASS = "Door unlocked!";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //TestingActivity.fa.finish();
+        TestingActivity.fa.finish();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color);
-        
+        TextView instruction = findViewById(R.id.text_message2);
+        instruction.setText(TEST_INSTRUCTION2);
         timerTextView = (TextView) findViewById(R.id.text_clock);
 
         Button b = (Button) findViewById(R.id.button_color);
