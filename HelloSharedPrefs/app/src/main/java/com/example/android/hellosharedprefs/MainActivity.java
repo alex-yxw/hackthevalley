@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view The view (Button) that was clicked.
      */
-    public void plainningDrink(View view) {
+    public void planningDrink(View view) {
         willDrink = true;
         mShowCountTextView.setText(String.format("%s", DRINK));
         sendNotification();
