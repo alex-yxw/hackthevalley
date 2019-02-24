@@ -3,6 +3,7 @@
 
 const int red = 2; // set red LED pin (closing lock)
 const int green = 3; // set green LED pin (opening lock)
+const int white = 8;
 const int piezoPin = 4; //set piezo buzzer pin
 const int stepsPerRevolution = 1000;
 bool locked = false;
@@ -27,6 +28,7 @@ void setup() {
   pinMode(11, OUTPUT); //IN4
   pinMode(red, OUTPUT); // use the LED on pin 2 as an output
   pinMode(green, OUTPUT); // use the LED on pin 3 as an output
+  pinMode(white, OUTPUT); // use the LED on pin 8 as an output
 
   myStepper.setSpeed(motorSpeed);
   
@@ -56,7 +58,7 @@ void setup() {
 void loop() {
   // poll peripheral
   blePeripheral.poll();
-  
+  digitalWrite(white, HIGH);
 }
 
 void blePeripheralConnectHandler(BLECentral& central) {
@@ -88,8 +90,30 @@ void switchCharacteristicWritten(BLECentral& central, BLECharacteristic& charact
     Serial.println("LED off, mechanism unlocked");
     digitalWrite(red, LOW);
     digitalWrite(green, HIGH);
-    myStepper.step(1020);
+    myStepper.step(1050);
     locked = false;
     tone(piezoPin, 500, 500);
+  }
+
+
+// MANUAL RESETTING 
+  if(switchChar.value()==2){
+    myStepper.step(250);
+  }
+
+   if(switchChar.value()==3){
+    myStepper.step(-250);
+  }
+
+   if(switchChar.value()==8){
+    myStepper.step(500);
+  }
+
+   if(switchChar.value()==9){
+    myStepper.step(-500);
+  }
+
+  if(switchChar.value()==7){
+    myStepper.step(1050);
   }
 }
