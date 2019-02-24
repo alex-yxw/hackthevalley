@@ -8,6 +8,8 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -33,7 +35,6 @@ public class TestingActivity extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE =
             "com.example.android.hellosharedprefs.extra.MESSAGE";
-
 
 
     public static final int TEXT_REQUEST = 1;
@@ -124,8 +125,8 @@ public class TestingActivity extends AppCompatActivity {
                     clickMe.setText("No more retry");
                     canTry = false;
 //                  mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-                    // sendMessage();
-                    phoneCall();
+                    sendMessage();
+                    //phoneCall();
                 } //TODO: BUG
             }
         } else {
@@ -133,6 +134,28 @@ public class TestingActivity extends AppCompatActivity {
             textView.setText(CONTACT_OTHERS);
         }
     }
+
+    private final LocationListener locationListener = new LocationListener() {
+        public void onLocationChanged(Location location) {
+            LONG = location.getLongitude();
+            LAT = location.getLatitude();
+        }
+
+        @Override
+        public void onStatusChanged(String s, int i, Bundle bundle) {
+
+        }
+
+        @Override
+        public void onProviderEnabled(String s) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(String s) {
+
+        }
+    };
 
     private void sendMessage() {
 //        getLocation();
@@ -146,14 +169,57 @@ public class TestingActivity extends AppCompatActivity {
 //        sendIntent.setType("text/plain");
 //        startActivity(sendIntent);
 
+//        LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
-//        String phone = "6472705503";
-//        String sms = "Hi, this is Kotlin. I'm drunk and cannot drive myself. Please pick me up! I'm at ";
-//        sms = sms + "https://www.google.com/maps/search/?api=1&" + "query=" + LAT + "," + LONG;
-//        Intent intent = new Intent(Intent.ACTION_SENDTO);
-//        intent.setData(Uri.parse(phone));
-//        intent.putExtra("sms_body", sms);
-//        startActivity(intent);
+
+        //lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 10, locationListener);
+        //      if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        // TODO: Consider calling
+        //    ActivityCompat#requestPermissions
+        // here to request the missing permissions, and then overriding
+        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+        //                                          int[] grantResults)
+        // to handle the case where the user grants the permission. See the documentation
+        // for ActivityCompat#requestPermissions for more details.
+        //        return;
+        //  }
+        //Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        //LAT = location.getLongitude();
+        //LONG = location.getLatitude();
+
+        LocationManager locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+        if (location != null) {
+            LAT=location.getLatitude();
+            LONG=location.getLongitude();
+            Log.d("old","lat :  "+LAT);
+            Log.d("old","long :  "+LONG);
+            //this.onLocationChanged(location);
+        }
+
+        String phone = "6472705503";
+        String sms = "Hi, this is Kotlin. I'm drunk and cannot drive myself. Please pick me up! I'm at ";
+        sms = sms + "https://www.google.com/maps/search/?api=1&" + "query=" + LAT + "," + LONG;
+                //"https://www.google.com/maps/place/43%C2%B046'56.4%22N+79%C2%B011'19.6%22W/@43.7823333,-79.1909665,17z/data=!3m1!4b1!4m6!3m5!1s0x0:0x0!7e2!8m2!3d43.7823299!4d-79.1887872";
+/*        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse(phone));
+        intent.putExtra("sms_body", sms);
+     startActivity(intent);*/
+
+        Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("sms:" + phone));
+        intent.putExtra("sms_body", sms);
+        startActivity(intent);
     }
     public static Point getDisplaySize(@NonNull Context context) {
         Point point = new Point();
@@ -236,8 +302,8 @@ public class TestingActivity extends AppCompatActivity {
         } else {
 
 //           mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-//            sendMessage();
-            phoneCall();
+            sendMessage();
+            //phoneCall();
         }
     }
 
