@@ -14,6 +14,7 @@ import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -30,11 +31,22 @@ import java.util.TimerTask;
 
 public class TestingActivity extends AppCompatActivity {
 
+    public static final String EXTRA_MESSAGE =
+            "com.example.android.hellosharedprefs.extra.MESSAGE";
+
+    private final String TEST_INSTRUCTION2 = "Test your reflexes, get ready!";
+
+    public static final int TEXT_REQUEST = 1;
+
     private int current_score;
 
     private int try_count;
 
     private int retry_count;
+
+    Double LONG;
+
+    Double LAT;
 
     private final String CONTACT_OTHERS = "You need to contact friends or family. ";
 
@@ -67,13 +79,13 @@ public class TestingActivity extends AppCompatActivity {
         clickMe.setVisibility(View.GONE);
     }
 
-    private final int PASS_COUNT = 8;
+    private final int PASS_COUNT = 5;
 
-    private final int TOTAL_COUNT = 11;
+    private final int TOTAL_COUNT = 8;
 
     private final int MAX_RETRY = 3;
 
-    private final String YOU_PASS = "Door unlock!";
+    private final String YOU_PASS = "Door unlocked!";
 
     private boolean canTry = true;
     private boolean isRetrying = false;
@@ -84,6 +96,10 @@ public class TestingActivity extends AppCompatActivity {
 
     public void clickCount(View view) {
 
+        Intent intent2 = new Intent(this, TestingActivity.class);
+        intent2.putExtra(EXTRA_MESSAGE, TEST_INSTRUCTION2);
+        startActivityForResult(intent2, TEXT_REQUEST);
+        intent2.putExtra(EXTRA_MESSAGE, TEST_INSTRUCTION2);
         Button clickMe = findViewById(R.id.button_testing);
         Button start = findViewById(R.id.button_testing);
         TextView textView = findViewById(R.id.text_message);
@@ -109,8 +125,8 @@ public class TestingActivity extends AppCompatActivity {
                     textView.setText(CONTACT_OTHERS + NO_RETRY);
                     clickMe.setText("No more retry");
                     canTry = false;
-/*                    mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-                    sendMessage();*/
+//                  mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+                    // sendMessage();
                     phoneCall();
                 } //TODO: BUG
             }
@@ -121,12 +137,25 @@ public class TestingActivity extends AppCompatActivity {
     }
 
     private void sendMessage() {
-        getLocation();
-        Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, locationMessage);
-        sendIntent.setType("text/plain");
-        startActivity(sendIntent);
+//        getLocation();
+//        Intent sendIntent = new Intent();
+//        String phone = "6472705503";
+//        String sms = "Hi, this is Kotlin. I'm drunk and cannot drive myself. Please pick me up! I'm at ";
+//        locationMessage = sms + "https://www.google.com/maps/search/?api=1&" + "query=" + LAT + "," + LONG;
+//        sendIntent.setAction(Intent.ACTION_SENDTO);
+//        sendIntent.setData(Uri.parse(phone));
+//        sendIntent.putExtra(Intent.EXTRA_TEXT, locationMessage);
+//        sendIntent.setType("text/plain");
+//        startActivity(sendIntent);
+
+
+//        String phone = "6472705503";
+//        String sms = "Hi, this is Kotlin. I'm drunk and cannot drive myself. Please pick me up! I'm at ";
+//        sms = sms + "https://www.google.com/maps/search/?api=1&" + "query=" + LAT + "," + LONG;
+//        Intent intent = new Intent(Intent.ACTION_SENDTO);
+//        intent.setData(Uri.parse(phone));
+//        intent.putExtra("sms_body", sms);
+//        startActivity(intent);
     }
     public static Point getDisplaySize(@NonNull Context context) {
         Point point = new Point();
@@ -200,8 +229,8 @@ public class TestingActivity extends AppCompatActivity {
             retry_count++;
         } else {
 
-/*            mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-            sendMessage();*/
+//           mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+//            sendMessage();
             phoneCall();
         }
     }
@@ -227,6 +256,8 @@ public class TestingActivity extends AppCompatActivity {
                         public void onSuccess(Location location) {
                             if (location != null) {
                                 Location mLastLocation = location;
+                                LAT = mLastLocation.getLatitude();
+                                LONG = mLastLocation.getLongitude();
                                 locationMessage =
                                         getString(R.string.location_text,
                                                 mLastLocation.getLatitude(),

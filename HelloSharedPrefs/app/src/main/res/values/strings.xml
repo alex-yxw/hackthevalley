@@ -34,15 +34,15 @@ limitations under the License. -->
     <string name="default_count">0</string>
 
     <!-- Button label for Count button -->
-    <string name="yes_button">Yes</string>
+    <string name="yes_button">Yeah, I am!</string>
     <string name="notification_channel_name">Mascot Notification</string>
     <string name="notification_channel_description">Notification from Mascot</string>
     <!-- Button label for Reset button -->
-    <string name="reset_button">Test</string>
-    <string name="notification_title">Plainning to drink!</string>
-    <string name="notification_text">You need to pass the test to unlock the door.</string>
-    <string name="text_header">Instruction</string>
+    <string name="reset_button">Start test</string>
+    <string name="notification_title">Car Lock Activated!</string>
+    <string name="notification_text">To unlock, open app.</string>
+    <string name="text_header">Instructions:</string>
 
     <string name="button_testing">=^● ⋏ ● ^=</string>
-    <string name="button_start">Click me to start!</string>
+    <string name="button_start">Click here to start!</string>
 </resources>

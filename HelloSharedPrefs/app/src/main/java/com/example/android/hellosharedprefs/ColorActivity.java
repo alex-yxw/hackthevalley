@@ -37,12 +37,13 @@ public class ColorActivity extends AppCompatActivity {
         }
     };
 
-    private final String YOU_PASS = "Door unlock!";
+    private final String YOU_PASS = "Door unlocked!";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //TestingActivity.fa.finish();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color);
+        
         timerTextView = (TextView) findViewById(R.id.text_clock);
 
         Button b = (Button) findViewById(R.id.button_color);
